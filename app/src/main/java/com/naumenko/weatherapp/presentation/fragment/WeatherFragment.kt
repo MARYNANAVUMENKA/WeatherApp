@@ -104,12 +104,7 @@ class WeatherFragment : Fragment(), MavericksView {
     }
 
     private fun renderStateIconRes(path:Int,view: ImageView){
-        Glide.with(requireContext())
-            .load(path)
-            .centerCrop()
-            .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .skipMemoryCache(true)
-            .into(view)
+        view.setImageResource(path)
     }
 
     private fun renderStateIcon(path:String?,view: ImageView){

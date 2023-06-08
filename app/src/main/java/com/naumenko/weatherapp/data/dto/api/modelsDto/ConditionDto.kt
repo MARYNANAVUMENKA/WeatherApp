@@ -3,7 +3,7 @@ package com.naumenko.weatherapp.data.dto.api.modelsDto
 import com.google.gson.annotations.SerializedName
 
 data class ConditionDto(
-    @SerializedName("text") var text: String? = null,
-    @SerializedName("icon") var icon: String? = null,
-    @SerializedName("code") var code: Int? = null
+    @SerializedName("text") val text: String? = null,
+    @SerializedName("icon") val icon: String? = null,
+    @SerializedName("code") val code: Int? = null
 )
