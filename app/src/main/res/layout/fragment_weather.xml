@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/weather_fragment_image_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_nature_background" />
+
+    <ProgressBar
+        android:id="@+id/weather_fragment_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/weather_fragment_editText_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/search"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/weather_fragment_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_fragment_textView_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather_fragment_editText_layout"
+            tools:text="09:41 AM" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_fragment_textView_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="36dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather_fragment_textView_time"
+            tools:text="San Francisco" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_fragment_textView_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="36dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather_fragment_textView_city"
+            tools:text="Friday, 02 Jun 2023" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/weather_fragment_imageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather_fragment_textView_date" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_fragment_textView_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather_fragment_imageView"
+            tools:text="56.0 F" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_fragment_textView_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather_fragment_textView_temp"
+            tools:text="Partly cloudy" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/weather_fragment_imageView_wind"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="62dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@+id/weather_fragment_textView_temp"
+            app:layout_constraintTop_toBottomOf="@+id/weather_fragment_textView_temp"
+            tools:src="@drawable/ic_wind" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_fragment_textView_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/weather_fragment_imageView_wind"
+            app:layout_constraintStart_toEndOf="@+id/weather_fragment_imageView_wind"
+            app:layout_constraintTop_toTopOf="@+id/weather_fragment_imageView_wind"
+            tools:text="5.6 mph" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/weather_fragment_imageView_drop"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="@+id/weather_fragment_textView_temp"
+            app:layout_constraintStart_toEndOf="@+id/weather_fragment_textView_wind"
+            app:layout_constraintTop_toTopOf="@+id/weather_fragment_textView_wind"
+            tools:src="@drawable/ic_drop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_fragment_textView_drop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/weather_fragment_imageView_drop"
+            app:layout_constraintTop_toTopOf="@+id/weather_fragment_imageView_drop"
+            tools:text="80.0 %" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <FrameLayout
+                android:id="@+id/weather_fragment_frame_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/weather_fragment_imageView_today"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center|top"
+                    android:scaleType="centerCrop" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weather_fragment_temp_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="52.2/63.3 F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weather_fragment_text_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginTop="56dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="Today" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/weather_fragment_frame_tomorrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/weather_fragment_imageView_tomorrow"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center|top"
+                    android:scaleType="centerCrop" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weather_fragment_temp_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="52.2/63.3 F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weather_fragment_text_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginTop="56dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="Tomorrow" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/weather_fragment_frame_after_tomorrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/weather_fragment_imageView_after_tomorrow"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center|top"
+                    android:scaleType="centerCrop" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weather_fragment_temp_after_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:text="52.2/63.3 F" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/weather_fragment_text_after_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginTop="56dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="After Tomorrow" />
+
+            </FrameLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
