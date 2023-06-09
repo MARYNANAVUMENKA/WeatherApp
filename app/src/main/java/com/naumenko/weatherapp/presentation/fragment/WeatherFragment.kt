@@ -15,7 +15,7 @@ import com.airbnb.mvrx.*
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.naumenko.weatherapp.databinding.FragmentWeatherBinding
-import com.naumenko.weatherapp.domain.model.WeatherData
+import com.naumenko.weatherapp.domain.model.WeatherModel
 import com.naumenko.weatherapp.presentation.LoadEvent
 import com.naumenko.weatherapp.presentation.SaveEvent
 import com.naumenko.weatherapp.presentation.viewmodel.WeatherViewModel
@@ -85,21 +85,21 @@ class WeatherFragment : Fragment(), MavericksView {
         inputMethodManager.hideSoftInputFromWindow(binding.weatherFragmentEditText.windowToken, 0)
     }
 
-    private fun renderStateText(state: WeatherData){
+    private fun renderStateText(model: WeatherModel){
         with(binding){
-            weatherFragmentTextViewTime.text = state.time
-            weatherFragmentTextViewDate.text = state.data
-            weatherFragmentTextViewCity.text = state.cityName
-            weatherFragmentTextViewTemp.text = state.temperature
-            weatherFragmentTextViewCondition.text = state.condition
-            weatherFragmentTextViewWind.text = state.wind
-            weatherFragmentTextViewDrop.text = state.drop
-            weatherFragmentTempToday.text = state.tempToday
-            weatherFragmentTextToday.text = state.today
-            weatherFragmentTempTomorrow.text = state.tempTomorrow
-            weatherFragmentTextTomorrow.text = state.tomorrow
-            weatherFragmentTempAfterTomorrow.text = state.tempAfterTomorrow
-            weatherFragmentTextAfterTomorrow.text = state.afterTomorrow
+            weatherFragmentTextViewTime.text = model.time
+            weatherFragmentTextViewDate.text = model.data
+            weatherFragmentTextViewCity.text = model.cityName
+            weatherFragmentTextViewTemp.text = model.temperature
+            weatherFragmentTextViewCondition.text = model.condition
+            weatherFragmentTextViewWind.text = model.wind
+            weatherFragmentTextViewDrop.text = model.drop
+            weatherFragmentTempToday.text = model.tempToday
+            weatherFragmentTextToday.text = model.today
+            weatherFragmentTempTomorrow.text = model.tempTomorrow
+            weatherFragmentTextTomorrow.text = model.tomorrow
+            weatherFragmentTempAfterTomorrow.text = model.tempAfterTomorrow
+            weatherFragmentTextAfterTomorrow.text = model.afterTomorrow
         }
     }
 

@@ -1,8 +1,8 @@
 package com.naumenko.weatherapp.domain
 
-import com.naumenko.weatherapp.data.dto.api.modelsDto.ResponseWeatherData
+import com.naumenko.weatherapp.domain.model.WeatherModel
 
 interface WeatherRepository {
 
-    suspend fun getWeatherData(cityName: String): ResponseWeatherData
+    suspend fun getWeatherData(cityName: String): WeatherModel
 }

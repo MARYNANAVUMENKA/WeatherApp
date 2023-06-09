@@ -5,7 +5,6 @@ import com.airbnb.mvrx.MavericksViewModelFactory
 import com.naumenko.weatherapp.di.AssistedViewModelFactory
 import com.naumenko.weatherapp.di.daggerMavericksViewModelFactory
 import com.naumenko.weatherapp.domain.WeatherRepository
-import com.naumenko.weatherapp.domain.mapper.toWeatherData
 import com.naumenko.weatherapp.domain.state.WeatherState
 import com.naumenko.weatherapp.presentation.LoadEvent
 import com.naumenko.weatherapp.presentation.SaveEvent
@@ -42,7 +41,7 @@ class WeatherViewModel @AssistedInject constructor(
 
     private fun setState(cityName: String) {
         suspend {
-            repository.getWeatherData(cityName).toWeatherData()
+            repository.getWeatherData(cityName)
         }.execute {
             copy(result = it)
         }
