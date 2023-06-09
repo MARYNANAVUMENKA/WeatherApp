@@ -66,6 +66,7 @@ class WeatherFragment : Fragment(), MavericksView {
             viewModel.send(LoadEvent())
         }
         setupListeners()
+        refresh()
     }
 
     private fun setupListeners() {
@@ -116,6 +117,13 @@ class WeatherFragment : Fragment(), MavericksView {
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .skipMemoryCache(true)
             .into(view)
+    }
+
+    private fun refresh() {
+        binding.weatherFragmentRefresh.setOnRefreshListener {
+            viewModel.send(LoadEvent())
+            binding.weatherFragmentRefresh.isRefreshing = false
+        }
     }
 
     override fun onDestroyView() {
