@@ -38,7 +38,6 @@ class WeatherViewModel @AssistedInject constructor(
          }
      }
 
-
     private fun setState(cityName: String) {
         suspend {
             repository.getWeatherData(cityName)

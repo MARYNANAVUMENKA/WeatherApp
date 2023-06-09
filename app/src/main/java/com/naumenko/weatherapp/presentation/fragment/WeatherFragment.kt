@@ -62,7 +62,9 @@ class WeatherFragment : Fragment(), MavericksView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.send(LoadEvent())
+        if (savedInstanceState==null){
+            viewModel.send(LoadEvent())
+        }
         setupListeners()
     }
 
