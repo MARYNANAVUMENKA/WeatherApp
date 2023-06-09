@@ -95,11 +95,11 @@ class WeatherFragment : Fragment(), MavericksView {
             weatherFragmentTextViewWind.text = model.wind
             weatherFragmentTextViewDrop.text = model.drop
             weatherFragmentTempToday.text = model.tempToday
-            weatherFragmentTextToday.text = model.today
+            weatherFragmentTextToday.text = resources.getString(model.today)
             weatherFragmentTempTomorrow.text = model.tempTomorrow
-            weatherFragmentTextTomorrow.text = model.tomorrow
+            weatherFragmentTextTomorrow.text = resources.getString(model.tomorrow)
             weatherFragmentTempAfterTomorrow.text = model.tempAfterTomorrow
-            weatherFragmentTextAfterTomorrow.text = model.afterTomorrow
+            weatherFragmentTextAfterTomorrow.text = resources.getString(model.afterTomorrow)
         }
     }
 
